@@ -1,6 +1,10 @@
 # Welcome to Kubernetes!
 
 Organizer: Lajos Papp, Janos Matyas
+
 Location: Epam Systems
+
 RSVP: 164
+
 Attendeed: 110
+
