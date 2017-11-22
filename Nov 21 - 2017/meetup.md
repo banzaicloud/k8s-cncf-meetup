@@ -6,5 +6,5 @@ Location: Epam Systems
 
 RSVP: 164
 
-Attendeed: 110
+Attended: 110
 
