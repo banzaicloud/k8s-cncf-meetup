@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: very-important-app
+spec:
+  selector:
+    matchLabels:
+      name: very-important-app
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        name: very-important-app
+    spec:
+      containers:
+      - image: nginx
+        name: very-important-app
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d
+        resources:
+          requests:
+            cpu: "450m"
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: node.banzaicloud.io/ondemand
+                operator: In
+                values:
+                - "true"
+      volumes:
+      - name: config-volume
+        configMap:
+          name: nginx-config

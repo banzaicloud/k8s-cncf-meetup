@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: very-important-app
+spec:
+  selector:
+    matchLabels:
+      name: very-important-app
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        name: very-important-app
+    spec:
+      containers:
+      - image: nginx
+        name: very-important-app
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: name
+                operator: In
+                values:
+                - redis-cache
+            topologyKey: "kubernetes.io/hostname"
+      volumes:
+      - name: config-volume
+        configMap:
+          name: nginx-config
