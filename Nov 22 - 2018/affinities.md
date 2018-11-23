@@ -1,3 +1,4 @@
+> The K8S visualizer used for the demo is available here: https://github.com/martonsereg/gcp-live-k8s-visualizer
 
 ### 0. why do we want this?
 
@@ -13,9 +14,8 @@ kubectl get services --watch
 kubectl get pods -o wide
 ```
 
-open browser
-
 visualizer:
+
 ```
 kubectl proxy --www=./gcp-live-k8s-visualizer --www-prefix=/visualizer/
 ```
