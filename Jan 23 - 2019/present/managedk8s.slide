@@ -1,0 +1,31 @@
+Managed Kubernetes
+23 Jan 2019
+Tags: k8s, gke, eks, banzaicloud
+
+Marton Sereg
+Banzai Cloud
+marton@banzaicloud.com
+
+https://github.com/martonsereg/k8s-meetup
+
+* The hard way
+
+.image k8s-the-hard-way.png _ 800
+
+* Managed Kubernetes
+
+.image k8s-hosted.png _ 800
+
+* Kubernetes platforms
+
+I have a Kubernetes cluster, but I still don't know how to use it!
+
+deployments / scaling / CI/CD
+monitoring / logging / tracing / service mesh
+security scans / container registries / disaster recovery
+ 
+.image bclogo.png _ 500
+
+* Today's agenda
+
+.image poll.png _ 850
