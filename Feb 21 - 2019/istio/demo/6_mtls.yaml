@@ -1,0 +1,33 @@
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: "MeshPolicy"
+metadata:
+  name: "default"
+  labels:
+    app: istio-security
+spec:
+  peers:
+  - mtls: {}
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: "default"
+  labels:
+    app: istio-security
+spec:
+  host: "*.local"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: "api-server"
+  labels:
+    app: istio-security
+spec:
+  host: "kubernetes.default.svc.cluster.local"
+  trafficPolicy:
+    tls:
+      mode: DISABLE

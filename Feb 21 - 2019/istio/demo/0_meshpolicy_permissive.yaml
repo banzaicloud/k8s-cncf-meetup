@@ -1,0 +1,10 @@
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: "MeshPolicy"
+metadata:
+  name: "default"
+  labels:
+    app: istio-security
+spec:
+  peers:
+  - mtls:
+      mode: PERMISSIVE

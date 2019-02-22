@@ -1,0 +1,49 @@
+Istio Introduction
+22 Feb 2019
+Tags: k8s, istio, servicemesh, banzaicloud
+
+Marton Sereg
+Banzai Cloud
+marton@banzaicloud.com
+
+https://github.com/martonsereg/k8s-meetup
+
+* What is istio?
+
+It's a *service* *mesh*
+
+"A dedicated infrastructure layer for handling service-to-service communication." - _Linkerd_
+
+"The term service mesh is used to describe the network of microservices that make up such applications and the interactions between them." - _Istio_
+
+"A service mesh is a configurable, low‑latency infrastructure layer designed to handle a high volume of network‑based interprocess communication among application infrastructure services using application programming interfaces (APIs)." - _Nginx_
+
+"A service mesh is a way to control how different parts of an application share data with one another." - _RedHat_
+
+* I'm still confused...
+
+.image 4ea.jpg.gif _ 600
+
+*So* *what* *it* *really* *is?*
+
+A set of common network-related tasks that can be abstracted away from both the applications and the underlying networks.
+
+* Architecture
+
+.image arch.svg
+
+* Demo
+
+.image noistio.svg
+
+* Final thoughts
+
+It's the most popular service mesh.
+- Backed by IBM, Google, Lyft, RedHat
+- Most mature, most features
+
+But heavy and very complex
+- It's not necessarily the best choice
+
+We are building an *operator* to make things easier:
+.link http://github.com/banzaicloud/istio-operator
